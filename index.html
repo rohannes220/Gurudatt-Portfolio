@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gurudatt Gaonkar">
+    <meta name="description" content="Gurudatt Gaonkar - Software Developer specializing in .NET, AI/ML, and Full-Stack Development. Level up your career!">
+    <meta name="keywords" content="Software Developer, .NET, Machine Learning, Computer Vision, NLP, Azure">
+    <title>Gurudatt Gaonkar | Level Up Your Career 🎮</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    
+    <!-- Google Fonts - Press Start 2P -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/retro-main.css">
+    <link rel="stylesheet" href="./css/retro-game.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Pixel Border Decoration -->
+    <div class="pixel-border-top"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top retro-nav">
+        <div class="container">
+            <a class="navbar-brand retro-brand" href="index.html">
+                <span class="pixel-text">🎮 GURUDATT.DEV</span>
+            </a>
+            <button class="navbar-toggler retro-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active pixel-link" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pixel-link" href="projects.html">QUESTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pixel-link" href="ai-page.html">STORY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pixel-link" href="#contact">CONNECT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Game Start Screen -->
+    <section class="hero-section retro-hero">
+        <div class="container">
+            <div class="game-screen">
+                <div class="screen-content">
+                    <!-- Coin Counter -->
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <span class="pixel-icon">🪙</span>
+                            <span class="stat-value" id="coinCounter">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="pixel-icon">⭐</span>
+                            <span class="stat-value">LEVEL 99</span>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="hero-content">
+                                <div class="press-start-banner">
+                                    <span class="blink">▶ PRESS START</span>
+                                </div>
+                                <h1 class="retro-title">
+                                    PLAYER:<br>
+                                    <span class="name-highlight">GURUDATT<br>GAONKAR</span>
+                                </h1>
+                                <div class="class-box">
+                                    <span class="class-label">CLASS:</span>
+                                    <span class="class-value">SOFTWARE WIZARD</span>
+                                </div>
+                                <p class="hero-description pixel-text-sm">
+                                    MASTERING .NET DEVELOPMENT, AI/ML MAGIC,<br>
+                                    AND FULL-STACK ADVENTURES.<br>
+                                    READY TO COMPLETE YOUR NEXT QUEST!
+                                </p>
+                                <div class="hero-buttons">
+                                    <a href="projects.html" class="retro-btn btn-primary-retro">
+                                        <span>VIEW QUESTS</span>
+                                    </a>
+                                    <a href="#contact" class="retro-btn btn-secondary-retro">
+                                        <span>HIRE ME</span>
+                                    </a>
+                                </div>
+                                <div class="social-links-retro">
+                                    <a href="https://github.com/Gurudatt007" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/gurudatt-gaonkar/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="pixel-character-container">
+                                <div class="pixel-character" id="playerCharacter">
+                                    <img src="./images/profile.jpg" alt="Gurudatt Gaonkar - Software Developer pixel art style" class="profile-pixel">
+                                    <div class="level-badge">LVL 99</div>
+                                </div>
+                                <div class="floating-coins" id="floatingCoins"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating Pixels Background -->
+        <div class="pixel-background" id="pixelBg"></div>
+    </section>
+
+    <!-- Skills Game Section -->
+    <section class="skills-game-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="retro-section-title">
+                    <span class="title-decoration">◄◄◄</span>
+                    POWER-UPS & ABILITIES
+                    <span class="title-decoration">►►►</span>
+                </h2>
+                <p class="retro-subtitle pixel-text-sm">COLLECT ALL SKILL BADGES TO UNLOCK ACHIEVEMENTS!</p>
+            </div>
+
+            <!-- Interactive Skill Game -->
+            <div class="skill-game-container">
+                <div class="game-canvas-wrapper">
+                    <canvas id="skillGameCanvas" aria-label="Interactive 8-bit skill game"></canvas>
+                    <div class="game-instructions">
+                        <p class="pixel-text-xs">🎮 CLICK SKILLS TO COLLECT POWER-UPS! 🎮</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skill Categories as Game Levels -->
+            <div class="skill-levels row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="skill-level-card level-1">
+                        <div class="level-header">
+                            <span class="level-number">WORLD 1</span>
+                            <span class="level-icon">💻</span>
+                        </div>
+                        <h3 class="level-title">LANGUAGES</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge">C#</span>
+                            <span class="skill-badge">.NET</span>
+                            <span class="skill-badge">JAVA</span>
+                            <span class="skill-badge">PYTHON</span>
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">JS</span>
+                            <span class="skill-badge">REACT</span>
+                            <span class="skill-badge">NODE</span>
+                            <span class="skill-badge">TS</span>
+                        </div>
+                        <div class="achievement">
+                            <span class="achievement-text">🏆 POLYGLOT MASTER</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="skill-level-card level-2">
+                        <div class="level-header">
+                            <span class="level-number">WORLD 2</span>
+                            <span class="level-icon">☁️</span>
+                        </div>
+                        <h3 class="level-title">CLOUD TECH</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge">AZURE</span>
+                            <span class="skill-badge">REST</span>
+                            <span class="skill-badge">GIT</span>
+                            <span class="skill-badge">CI/CD</span>
+                            <span class="skill-badge">DEVOPS</span>
+                            <span class="skill-badge">POSTMAN</span>
+                        </div>
+                        <div class="achievement">
+                            <span class="achievement-text">🏆 CLOUD WARRIOR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="skill-level-card level-3">
+                        <div class="level-header">
+                            <span class="level-number">WORLD 3</span>
+                            <span class="level-icon">🧠</span>
+                        </div>
+                        <h3 class="level-title">AI/ML MAGIC</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge">PYTORCH</span>
+                            <span class="skill-badge">TENSORFLOW</span>
+                            <span class="skill-badge">NLP</span>
+                            <span class="skill-badge">NLTK</span>
+                            <span class="skill-badge">CV</span>
+                            <span class="skill-badge">POSE EST</span>
+                        </div>
+                        <div class="achievement">
+                            <span class="achievement-text">🏆 AI SORCERER</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="skill-level-card level-4">
+                        <div class="level-header">
+                            <span class="level-number">WORLD 4</span>
+                            <span class="level-icon">🎖️</span>
+                        </div>
+                        <h3 class="level-title">CERTIFICATIONS</h3>
+                        <div class="skill-badges">
+                            <span class="skill-badge cert-badge">AZ-900</span>
+                            <span class="skill-badge cert-badge">AZURE</span>
+                        </div>
+                        <div class="achievement">
+                            <span class="achievement-text">🏆 CERTIFIED LEGEND</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats/About Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="game-stats-board">
+                <h2 class="retro-section-title text-center mb-5">
+                    <span class="title-decoration">▼▼▼</span>
+                    CHARACTER STATS
+                    <span class="title-decoration">▲▲▲</span>
+                </h2>
+                
+                <div class="row">
+                    <div class="col-lg-8 mb-4">
+                        <div class="stat-card-large">
+                            <h3 class="stat-title pixel-text">ABOUT THE PLAYER</h3>
+                            <p class="stat-description pixel-text-sm">
+                                A PASSIONATE SOFTWARE WIZARD WITH EXPERTISE IN FULL-STACK DEVELOPMENT 
+                                AND ARTIFICIAL INTELLIGENCE. MY QUESTS FOCUS ON CREATING INTELLIGENT 
+                                APPLICATIONS THAT SOLVE REAL-WORLD PROBLEMS, FROM HELPING ADVENTURERS 
+                                EXERCISE CORRECTLY WITH COMPUTER VISION TO MAKING COMMUNICATION 
+                                ACCESSIBLE FOR THE HEARING-IMPAIRED.
+                            </p>
+                            <p class="stat-description pixel-text-sm">
+                                WITH A STRONG FOUNDATION IN .NET DEVELOPMENT AND AZURE CLOUD, COMBINED 
+                                WITH SPECIALIZATIONS IN COMPUTER VISION AND NLP, I BRING A UNIQUE BLEND 
+                                OF TRADITIONAL SOFTWARE ENGINEERING AND CUTTING-EDGE AI MAGIC TO EVERY QUEST.
+                            </p>
+                            <div class="hobbies-retro">
+                                <h4 class="pixel-text-sm mb-3">SIDE QUESTS & HOBBIES:</h4>
+                                <div class="hobby-pills">
+                                    <span class="hobby-pill">📚 READING</span>
+                                    <span class="hobby-pill">⛰️ HIKING</span>
+                                    <span class="hobby-pill">⚽ SOCCER</span>
+                                    <span class="hobby-pill">🏊 SWIMMING</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="stat-card stat-hp">
+                            <div class="stat-icon">💪</div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-fill" style="width: 98%"></div>
+                            </div>
+                            <div class="stat-label">PROJECTS COMPLETED: 3+</div>
+                        </div>
+                        
+                        <div class="stat-card stat-mp">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-fill" style="width: 96%"></div>
+                            </div>
+                            <div class="stat-label">ACCURACY RATE: 92-98%</div>
+                        </div>
+                        
+                        <div class="stat-card stat-exp">
+                            <div class="stat-icon">📜</div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-fill" style="width: 100%"></div>
+                            </div>
+                            <div class="stat-label">PUBLISHED: SPRINGER</div>
+                        </div>
+                        
+                        <div class="stat-card stat-level">
+                            <div class="stat-icon">🏅</div>
+                            <div class="stat-bar">
+                                <div class="stat-bar-fill" style="width: 100%"></div>
+                            </div>
+                            <div class="stat-label">AZURE CERTIFIED</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-game-over">
+                <h2 class="retro-section-title text-center">
+                    <span class="blink">▶</span> CONNECT WITH ME <span class="blink">◀</span>
+                </h2>
+                <p class="retro-subtitle text-center pixel-text-sm">LET'S TEAM UP FOR YOUR NEXT EPIC QUEST!</p>
+                
+                <div class="row justify-content-center mt-5">
+                    <div class="col-lg-8">
+                        <div class="contact-items">
+                            <div class="contact-item-retro">
+                                <span class="contact-icon">✉️</span>
+                                <div class="contact-details">
+                                    <div class="contact-label pixel-text-xs">EMAIL</div>
+                                    <div class="contact-value pixel-text-sm">gaonkar.g@northeastern.edu</div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item-retro">
+                                <span class="contact-icon">🐙</span>
+                                <div class="contact-details">
+                                    <div class="contact-label pixel-text-xs">GITHUB</div>
+                                    <a href="https://github.com/Gurudatt007" target="_blank" rel="noopener noreferrer" class="contact-value pixel-text-sm contact-link">
+                                        GITHUB.COM/GURUDATT007
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item-retro">
+                                <span class="contact-icon">💼</span>
+                                <div class="contact-details">
+                                    <div class="contact-label pixel-text-xs">LINKEDIN</div>
+                                    <a href="https://www.linkedin.com/in/gurudatt-gaonkar/" target="_blank" rel="noopener noreferrer" class="contact-value pixel-text-sm contact-link">
+                                        LINKEDIN.COM/IN/GURUDATT-GAONKAR
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-retro">
+        <div class="container">
+            <p class="footer-text pixel-text-xs">
+                © 2024 GURUDATT GAONKAR | BUILT WITH HTML5, CSS3 & ES6+ | POWERED BY RETRO GAMING MAGIC 🎮
+            </p>
+            <p class="footer-text pixel-text-xs">
+                THANKS FOR PLAYING! ♥♥♥
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS Modules -->
+    <script type="module" src="./js/retro-main.js"></script>
+</body>
+</html>

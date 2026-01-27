@@ -1,0 +1,256 @@
+/* Retro Game Canvas Styles */
+
+.skill-game-container {
+  background-color: var(--retro-dark);
+  border: 8px solid var(--retro-accent);
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 
+    inset 0 0 0 4px var(--retro-bg),
+    8px 8px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.game-canvas-wrapper {
+  position: relative;
+  background-color: #000000;
+  border: 4px solid var(--retro-text);
+  overflow: hidden;
+}
+
+#skillGameCanvas {
+  width: 100%;
+  height: 500px;
+  display: block;
+  cursor: crosshair;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.game-instructions {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--retro-bg);
+  border-top: 4px solid var(--retro-accent);
+}
+
+/* Floating Coins Animation */
+.floating-coins {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.coin {
+  position: absolute;
+  font-size: 24px;
+  animation: float-up 2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Score Popup */
+.score-popup {
+  position: absolute;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  color: var(--retro-accent);
+  text-shadow: 2px 2px 0 var(--retro-text-shadow);
+  pointer-events: none;
+  animation: score-rise 1s ease-out forwards;
+  z-index: 20;
+}
+
+@keyframes score-rise {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Power-up collected animation */
+.powerup-collected {
+  animation: powerup-flash 0.5s ease-in-out;
+}
+
+@keyframes powerup-flash {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(2) saturate(2);
+  }
+}
+
+/* Game Over Overlay */
+.game-over-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--retro-dark);
+  border: 8px solid var(--retro-primary);
+  padding: 40px;
+  text-align: center;
+  z-index: 100;
+  box-shadow: 
+    inset 0 0 0 4px var(--retro-accent),
+    0 0 50px rgba(255, 0, 110, 0.5);
+}
+
+.game-over-text {
+  font-size: 24px;
+  color: var(--retro-primary);
+  text-shadow: 4px 4px 0 var(--retro-text-shadow);
+  margin-bottom: 20px;
+  animation: blink 1s step-start infinite;
+}
+
+.final-score {
+  font-size: 18px;
+  color: var(--retro-accent);
+  margin-bottom: 30px;
+}
+
+.restart-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  padding: 15px 30px;
+  background-color: var(--retro-success);
+  border: 4px solid var(--retro-text);
+  color: var(--retro-text-shadow);
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.restart-btn:hover {
+  background-color: var(--retro-accent);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Pixel Particle Effects */
+.pixel-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  animation: particle-explode 1s ease-out forwards;
+}
+
+@keyframes particle-explode {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Loading Screen */
+.game-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 50;
+}
+
+.loading-text {
+  font-size: 14px;
+  color: var(--retro-text);
+  margin-bottom: 20px;
+  animation: blink 1s step-start infinite;
+}
+
+.loading-bar {
+  width: 200px;
+  height: 20px;
+  background-color: var(--retro-bg);
+  border: 4px solid var(--retro-text);
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--retro-primary) 0px,
+    var(--retro-primary) 8px,
+    var(--retro-accent) 8px,
+    var(--retro-accent) 16px
+  );
+  animation: loading-progress 2s ease-out forwards;
+}
+
+@keyframes loading-progress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Responsive Canvas */
+@media (max-width: 768px) {
+  #skillGameCanvas {
+    height: 350px;
+  }
+
+  .skill-game-container {
+    padding: 20px;
+    border: 4px solid var(--retro-accent);
+  }
+
+  .game-over-text {
+    font-size: 16px;
+  }
+
+  .final-score {
+    font-size: 14px;
+  }
+
+  .restart-btn {
+    font-size: 10px;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  #skillGameCanvas {
+    height: 300px;
+  }
+
+  .coin {
+    font-size: 18px;
+  }
+
+  .score-popup {
+    font-size: 12px;
+  }
+}

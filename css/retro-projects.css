@@ -1,0 +1,468 @@
+/* Retro Projects/Quests Page Styles */
+
+/* Quest Header */
+.quest-header {
+  padding: 150px 0 80px;
+  background-color: var(--retro-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.quest-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 0, 110, 0.03) 2px,
+    rgba(255, 0, 110, 0.03) 4px
+  );
+}
+
+.quest-banner {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background-color: var(--retro-bg);
+  border: 8px solid var(--retro-primary);
+  padding: 50px 40px;
+  box-shadow: 
+    inset 0 0 0 4px var(--retro-dark),
+    8px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.retro-title-large {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--retro-text);
+  text-shadow: 4px 4px 0 var(--retro-text-shadow);
+  line-height: 1.5;
+}
+
+.quest-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.quest-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--retro-dark);
+  border: 4px solid var(--retro-accent);
+  padding: 15px 25px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.quest-stat .stat-icon {
+  font-size: 24px;
+}
+
+.quest-stat .stat-text {
+  font-size: 10px;
+  color: var(--retro-text);
+}
+
+/* Quest Section */
+.quest-section {
+  padding: 80px 0;
+  background-color: var(--retro-bg);
+}
+
+/* Quest Card */
+.quest-card {
+  background-color: var(--retro-dark);
+  border: 8px solid;
+  padding: 40px;
+  margin-bottom: 80px;
+  position: relative;
+  box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
+}
+
+.boss-quest {
+  border-color: var(--retro-primary);
+}
+
+.side-quest {
+  border-color: var(--retro-secondary);
+}
+
+.quest-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 16px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Quest Label */
+.quest-label {
+  position: absolute;
+  top: -20px;
+  left: 40px;
+  background-color: var(--retro-accent);
+  border: 4px solid var(--retro-text);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.label-icon {
+  font-size: 20px;
+}
+
+.label-text {
+  font-size: 8px;
+  color: var(--retro-text-shadow);
+  font-weight: bold;
+}
+
+/* Quest Image */
+.quest-image-container {
+  position: relative;
+  border: 6px solid var(--retro-text);
+  background-color: var(--retro-bg);
+  overflow: hidden;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+.quest-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: contrast(1.2) saturate(1.3);
+  transition: all 0.3s;
+}
+
+.quest-card:hover .quest-image {
+  transform: scale(1.05);
+  filter: contrast(1.3) saturate(1.5);
+}
+
+.quest-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.quest-level {
+  background-color: var(--retro-success);
+  border: 4px solid var(--retro-text);
+  padding: 8px 16px;
+  font-size: 8px;
+  color: var(--retro-text-shadow);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Quest Content */
+.quest-content {
+  padding: 0 20px;
+}
+
+.quest-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--retro-text);
+  text-shadow: 3px 3px 0 var(--retro-text-shadow);
+  line-height: 1.4;
+}
+
+.quest-subtitle {
+  font-size: 14px;
+  color: var(--retro-accent);
+  display: block;
+  margin-top: 10px;
+}
+
+/* Quest Tags */
+.quest-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.quest-tags .tag {
+  background-color: var(--retro-bg);
+  border: 3px solid var(--retro-primary);
+  padding: 8px 16px;
+  font-size: 8px;
+  color: var(--retro-text);
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+.quest-tags .tag:hover {
+  background-color: var(--retro-primary);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Quest Description */
+.quest-description {
+  background-color: var(--retro-bg);
+  border: 4px solid var(--retro-border);
+  padding: 20px;
+  margin-bottom: 25px;
+  line-height: 2;
+}
+
+.quest-description p:first-child {
+  color: var(--retro-accent);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Quest Objectives */
+.quest-objectives {
+  background-color: var(--retro-bg);
+  border: 4px solid var(--retro-success);
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.objective-title {
+  color: var(--retro-success);
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 12px;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.objective-item .check {
+  color: var(--retro-success);
+  font-size: 16px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.objective-item .text {
+  color: var(--retro-text);
+}
+
+/* Quest Rewards */
+.quest-rewards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.reward-item {
+  background-color: var(--retro-accent);
+  border: 4px solid var(--retro-text);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.reward-icon {
+  font-size: 20px;
+}
+
+.reward-text {
+  font-size: 8px;
+  color: var(--retro-text-shadow);
+  font-weight: bold;
+}
+
+/* Quest Buttons */
+.quest-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Quest CTA */
+.quest-cta {
+  background-color: var(--retro-dark);
+  border: 8px solid var(--retro-accent);
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: 
+    inset 0 0 0 4px var(--retro-primary),
+    8px 8px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.quest-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 190, 11, 0.05) 10px,
+    rgba(255, 190, 11, 0.05) 20px
+  );
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--retro-accent);
+  text-shadow: 4px 4px 0 var(--retro-text-shadow);
+}
+
+.cta-description {
+  margin-bottom: 30px;
+  line-height: 2;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-large {
+  padding: 20px 40px;
+  font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .retro-title-large {
+    font-size: 20px;
+  }
+
+  .quest-card {
+    padding: 30px 20px;
+    border-width: 6px;
+  }
+
+  .quest-title {
+    font-size: 16px;
+  }
+
+  .quest-subtitle {
+    font-size: 12px;
+  }
+
+  .quest-content {
+    padding: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quest-header {
+    padding: 120px 0 60px;
+  }
+
+  .retro-title-large {
+    font-size: 16px;
+  }
+
+  .quest-banner {
+    padding: 40px 20px;
+    border-width: 4px;
+  }
+
+  .quest-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .quest-card {
+    padding: 20px 15px;
+    border-width: 4px;
+    margin-bottom: 60px;
+  }
+
+  .quest-label {
+    left: 15px;
+    top: -15px;
+    padding: 8px 15px;
+  }
+
+  .label-text {
+    font-size: 7px;
+  }
+
+  .quest-title {
+    font-size: 14px;
+  }
+
+  .quest-subtitle {
+    font-size: 10px;
+  }
+
+  .quest-buttons {
+    flex-direction: column;
+  }
+
+  .quest-buttons .retro-btn {
+    width: 100%;
+  }
+
+  .quest-rewards {
+    flex-direction: column;
+  }
+
+  .quest-cta {
+    padding: 40px 20px;
+  }
+
+  .cta-title {
+    font-size: 16px;
+  }
+
+  .btn-large {
+    width: 100%;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .retro-title-large {
+    font-size: 14px;
+  }
+
+  .quest-title {
+    font-size: 12px;
+  }
+
+  .objective-item {
+    font-size: 8px;
+  }
+
+  .quest-tags .tag {
+    font-size: 7px;
+    padding: 6px 12px;
+  }
+}

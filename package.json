@@ -1,0 +1,38 @@
+{
+  "name": "gurudatt-portfolio",
+  "version": "1.0.0",
+  "description": "Interactive portfolio website for Gurudatt Gaonkar - Software Developer specializing in .NET, AI/ML, and Full-Stack Development",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "lint": "eslint js/**/*.js",
+    "format": "prettier --write \"**/*.{html,css,js,json}\"",
+    "format-check": "prettier --check \"**/*.{html,css,js,json}\""
+  },
+  "keywords": [
+    "portfolio",
+    "web-development",
+    "javascript",
+    "es6",
+    "html5",
+    "css3",
+    "machine-learning",
+    "computer-vision",
+    "nlp"
+  ],
+  "author": "Gurudatt Gaonkar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gurudatt007/portfolio"
+  },
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "prettier": "^3.1.0",
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

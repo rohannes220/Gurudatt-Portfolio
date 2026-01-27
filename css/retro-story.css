@@ -1,0 +1,452 @@
+/* Retro Story/AI Page Styles */
+
+/* Story Header */
+.story-header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 4px,
+    rgba(255, 0, 110, 0.1) 4px,
+    rgba(255, 0, 110, 0.1) 8px
+  );
+}
+
+.story-banner {
+  position: relative;
+  z-index: 2;
+}
+
+.story-title-screen {
+  text-align: center;
+  padding: 60px 40px;
+  background-color: var(--retro-dark);
+  border: 8px solid var(--retro-primary);
+  box-shadow: 
+    inset 0 0 0 4px var(--retro-accent),
+    0 0 50px rgba(255, 0, 110, 0.5);
+}
+
+.game-title {
+  font-size: 32px;
+  color: var(--retro-text);
+  text-shadow: 5px 5px 0 var(--retro-text-shadow);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.hero-name {
+  color: var(--retro-accent);
+  text-shadow: 5px 5px 0 var(--retro-primary);
+  display: block;
+  margin-top: 15px;
+  font-size: 40px;
+}
+
+.subtitle {
+  color: var(--retro-secondary);
+  margin-bottom: 30px;
+  font-size: 12px;
+}
+
+.press-start {
+  color: var(--retro-text);
+  padding: 15px 30px;
+  border: 4px solid var(--retro-text);
+  display: inline-block;
+  background-color: var(--retro-bg);
+}
+
+/* Story Timeline */
+.story-timeline {
+  padding: 80px 0;
+  background-color: var(--retro-bg);
+}
+
+.chapter-title {
+  font-size: 24px;
+  color: var(--retro-text);
+  text-shadow: 3px 3px 0 var(--retro-text-shadow);
+  margin-bottom: 60px;
+}
+
+.decoration {
+  color: var(--retro-primary);
+  margin: 0 20px;
+}
+
+/* Story Chapter */
+.story-chapter {
+  margin-bottom: 60px;
+  background-color: var(--retro-dark);
+  border: 8px solid;
+  padding: 40px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.chapter-1 {
+  border-color: var(--retro-primary);
+}
+
+.chapter-2 {
+  border-color: var(--retro-secondary);
+}
+
+.chapter-3 {
+  border-color: var(--retro-accent);
+}
+
+.chapter-4 {
+  border-color: var(--retro-success);
+}
+
+.chapter-5 {
+  border-color: var(--retro-primary);
+  border-width: 10px;
+}
+
+/* Chapter Header */
+.chapter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 4px dashed var(--retro-border);
+}
+
+.chapter-number {
+  background-color: var(--retro-bg);
+  border: 4px solid var(--retro-text);
+  padding: 12px 24px;
+  font-size: 10px;
+  color: var(--retro-text);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.chapter-year {
+  background-color: var(--retro-accent);
+  border: 4px solid var(--retro-text);
+  padding: 12px 24px;
+  font-size: 10px;
+  color: var(--retro-text-shadow);
+  font-weight: bold;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Chapter Content */
+.chapter-name {
+  font-size: 20px;
+  color: var(--retro-text);
+  text-shadow: 3px 3px 0 var(--retro-text-shadow);
+  margin-bottom: 10px;
+}
+
+.chapter-subtitle {
+  color: var(--retro-secondary);
+  margin-bottom: 25px;
+}
+
+.story-box {
+  background-color: var(--retro-bg);
+  border: 4px solid var(--retro-border);
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.story-text {
+  line-height: 2;
+  margin-bottom: 20px;
+  color: var(--retro-text);
+}
+
+.story-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Power-ups */
+.power-ups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.powerup-item {
+  background-color: var(--retro-bg);
+  border: 4px solid var(--retro-success);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.1s;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.powerup-item:hover {
+  background-color: var(--retro-success);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.powerup-icon {
+  font-size: 20px;
+}
+
+.powerup-name {
+  font-size: 8px;
+  color: var(--retro-text);
+}
+
+/* Philosophy Section */
+.philosophy-section {
+  padding: 80px 0;
+  background-color: var(--retro-dark);
+}
+
+.philosophy-card {
+  background-color: var(--retro-bg);
+  border: 6px solid var(--retro-border);
+  padding: 30px;
+  height: 100%;
+  transition: all 0.2s;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.philosophy-card:hover {
+  border-color: var(--retro-primary);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 12px;
+  color: var(--retro-text);
+  text-shadow: 2px 2px 0 var(--retro-text-shadow);
+  margin-bottom: 15px;
+}
+
+.card-text {
+  line-height: 1.8;
+  color: var(--retro-text);
+}
+
+/* Game Over Section */
+.game-over-section {
+  padding: 100px 0;
+  background-color: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-over-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 190, 11, 0.05) 2px,
+    rgba(255, 190, 11, 0.05) 4px
+  );
+}
+
+.game-over-box {
+  background-color: var(--retro-dark);
+  border: 10px solid var(--retro-accent);
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 
+    inset 0 0 0 5px var(--retro-primary),
+    0 0 60px rgba(255, 190, 11, 0.5);
+}
+
+.game-over-text {
+  font-size: 24px;
+  color: var(--retro-accent);
+  text-shadow: 4px 4px 0 var(--retro-text-shadow);
+  margin-bottom: 30px;
+}
+
+.continue-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--retro-text);
+  text-shadow: 3px 3px 0 var(--retro-text-shadow);
+}
+
+.continue-text {
+  line-height: 2;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .game-title {
+    font-size: 24px;
+  }
+
+  .hero-name {
+    font-size: 32px;
+  }
+
+  .chapter-title {
+    font-size: 18px;
+  }
+
+  .story-chapter {
+    padding: 30px 20px;
+  }
+
+  .chapter-name {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-header {
+    min-height: 80vh;
+    padding: 100px 20px 40px;
+  }
+
+  .story-title-screen {
+    padding: 40px 20px;
+    border-width: 4px;
+  }
+
+  .game-title {
+    font-size: 18px;
+  }
+
+  .hero-name {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 10px;
+  }
+
+  .story-timeline {
+    padding: 60px 0;
+  }
+
+  .chapter-title {
+    font-size: 14px;
+  }
+
+  .decoration {
+    display: none;
+  }
+
+  .story-chapter {
+    padding: 20px 15px;
+    border-width: 4px;
+  }
+
+  .chapter-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .chapter-name {
+    font-size: 14px;
+  }
+
+  .story-box {
+    padding: 15px;
+  }
+
+  .power-ups {
+    flex-direction: column;
+  }
+
+  .powerup-item {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .philosophy-card {
+    margin-bottom: 20px;
+  }
+
+  .game-over-section {
+    padding: 60px 0;
+  }
+
+  .game-over-box {
+    padding: 40px 20px;
+    border-width: 6px;
+  }
+
+  .game-over-text {
+    font-size: 16px;
+  }
+
+  .continue-title {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .game-title {
+    font-size: 14px;
+  }
+
+  .hero-name {
+    font-size: 18px;
+  }
+
+  .press-start {
+    font-size: 7px;
+    padding: 10px 20px;
+  }
+
+  .chapter-number,
+  .chapter-year {
+    font-size: 8px;
+    padding: 8px 16px;
+  }
+
+  .chapter-name {
+    font-size: 12px;
+  }
+
+  .story-text {
+    font-size: 8px;
+  }
+
+  .card-title {
+    font-size: 10px;
+  }
+}

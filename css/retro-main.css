@@ -1,0 +1,782 @@
+/* Retro Gaming 8-bit Portfolio Styles */
+
+/* Root Variables - Classic NES/SNES Palette */
+:root {
+  --retro-bg: #0f0f1e;
+  --retro-dark: #1a1a2e;
+  --retro-primary: #ff006e;
+  --retro-secondary: #00d9ff;
+  --retro-accent: #ffbe0b;
+  --retro-success: #06ffa5;
+  --retro-text: #ffffff;
+  --retro-text-shadow: #000000;
+  --retro-border: #4a4a6a;
+  --pixel-size: 4px;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--retro-bg);
+  color: var(--retro-text);
+  line-height: 1.8;
+  overflow-x: hidden;
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15) 0px, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.15) 3px),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.15) 0px, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.15) 3px);
+  background-size: 4px 4px;
+}
+
+/* Pixel Text Sizes */
+.pixel-text {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 0 var(--retro-text-shadow);
+}
+
+.pixel-text-sm {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.8;
+}
+
+.pixel-text-xs {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Pixel Border */
+.pixel-border-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--retro-primary) 0px,
+    var(--retro-primary) 8px,
+    var(--retro-secondary) 8px,
+    var(--retro-secondary) 16px,
+    var(--retro-accent) 16px,
+    var(--retro-accent) 24px,
+    var(--retro-success) 24px,
+    var(--retro-success) 32px
+  );
+  z-index: 9999;
+  animation: scroll-border 2s linear infinite;
+}
+
+@keyframes scroll-border {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 32px 0;
+  }
+}
+
+/* Navigation */
+.retro-nav {
+  background-color: var(--retro-dark);
+  padding: 1rem 0;
+  border-bottom: 4px solid var(--retro-primary);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.3);
+  margin-top: 8px;
+}
+
+.retro-brand {
+  font-size: 14px;
+  color: var(--retro-text);
+  text-shadow: 3px 3px 0 var(--retro-primary);
+  letter-spacing: 2px;
+}
+
+.retro-brand:hover {
+  color: var(--retro-accent);
+  text-shadow: 3px 3px 0 var(--retro-primary);
+}
+
+.pixel-link {
+  font-size: 10px;
+  color: var(--retro-text);
+  margin: 0 10px;
+  padding: 8px 16px;
+  border: 3px solid transparent;
+  transition: all 0.1s;
+  letter-spacing: 1px;
+}
+
+.pixel-link:hover,
+.pixel-link.active {
+  color: var(--retro-accent);
+  background-color: var(--retro-primary);
+  border: 3px solid var(--retro-text);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  transform: translate(-2px, -2px);
+}
+
+/* Hero Section */
+.retro-hero {
+  min-height: 100vh;
+  padding: 120px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-screen {
+  background-color: var(--retro-dark);
+  border: 8px solid var(--retro-border);
+  border-radius: 0;
+  box-shadow: 
+    inset 0 0 0 4px var(--retro-bg),
+    0 12px 0 rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(255, 0, 110, 0.3);
+  padding: 40px;
+  position: relative;
+}
+
+.screen-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Game Stats */
+.game-stats {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  justify-content: flex-start;
+}
+
+.stat-item {
+  background-color: var(--retro-bg);
+  border: 4px solid var(--retro-accent);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.pixel-icon {
+  font-size: 20px;
+}
+
+.stat-value {
+  font-size: 14px;
+  color: var(--retro-accent);
+  text-shadow: 2px 2px 0 var(--retro-text-shadow);
+}
+
+/* Press Start Banner */
+.press-start-banner {
+  background-color: var(--retro-primary);
+  border: 4px solid var(--retro-text);
+  padding: 15px 30px;
+  display: inline-block;
+  margin-bottom: 30px;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.press-start-banner span {
+  font-size: 12px;
+  color: var(--retro-text);
+  text-shadow: 2px 2px 0 var(--retro-text-shadow);
+}
+
+.blink {
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Retro Title */
+.retro-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--retro-text);
+  text-shadow: 4px 4px 0 var(--retro-text-shadow);
+  line-height: 1.4;
+}
+
+.name-highlight {
+  color: var(--retro-accent);
+  text-shadow: 4px 4px 0 var(--retro-primary);
+}
+
+/* Class Box */
+.class-box {
+  background-color: var(--retro-bg);
+  border: 4px solid var(--retro-secondary);
+  padding: 15px 20px;
+  margin-bottom: 30px;
+  display: inline-block;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.class-label {
+  color: var(--retro-secondary);
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.class-value {
+  color: var(--retro-text);
+  font-size: 12px;
+}
+
+.hero-description {
+  margin-bottom: 30px;
+  max-width: 500px;
+  line-height: 2;
+}
+
+/* Retro Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.retro-btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  padding: 15px 30px;
+  border: 4px solid;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.1s;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary-retro {
+  background-color: var(--retro-primary);
+  border-color: var(--retro-text);
+  color: var(--retro-text);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary-retro:hover {
+  background-color: var(--retro-accent);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn-secondary-retro {
+  background-color: var(--retro-secondary);
+  border-color: var(--retro-text);
+  color: var(--retro-text-shadow);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.btn-secondary-retro:hover {
+  background-color: var(--retro-success);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Social Links */
+.social-links-retro {
+  display: flex;
+  gap: 15px;
+}
+
+.social-btn {
+  width: 50px;
+  height: 50px;
+  background-color: var(--retro-bg);
+  border: 4px solid var(--retro-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--retro-text);
+  font-size: 20px;
+  transition: all 0.1s;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.social-btn:hover {
+  background-color: var(--retro-primary);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+  color: var(--retro-text);
+}
+
+/* Pixel Character */
+.pixel-character-container {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.pixel-character {
+  position: relative;
+  border: 8px solid var(--retro-accent);
+  background-color: var(--retro-bg);
+  padding: 20px;
+  box-shadow: 
+    8px 8px 0 var(--retro-primary),
+    16px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.profile-pixel {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 4px solid var(--retro-text);
+  filter: contrast(1.1) saturate(1.2);
+}
+
+.level-badge {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: var(--retro-accent);
+  border: 4px solid var(--retro-text);
+  padding: 10px 20px;
+  font-size: 12px;
+  color: var(--retro-text-shadow);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Pixel Background */
+.pixel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.retro-section-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--retro-text);
+  text-shadow: 4px 4px 0 var(--retro-text-shadow);
+  display: inline-block;
+}
+
+.title-decoration {
+  color: var(--retro-primary);
+  margin: 0 15px;
+}
+
+.retro-subtitle {
+  font-size: 10px;
+  color: var(--retro-secondary);
+}
+
+/* Skills Game Section */
+.skills-game-section {
+  padding: 80px 0;
+  background-color: var(--retro-bg);
+  position: relative;
+}
+
+/* Skill Levels */
+.skill-levels {
+  margin-top: 60px;
+}
+
+.skill-level-card {
+  background-color: var(--retro-dark);
+  border: 6px solid;
+  padding: 30px;
+  height: 100%;
+  transition: all 0.2s;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.level-1 {
+  border-color: var(--retro-primary);
+}
+
+.level-2 {
+  border-color: var(--retro-secondary);
+}
+
+.level-3 {
+  border-color: var(--retro-accent);
+}
+
+.level-4 {
+  border-color: var(--retro-success);
+}
+
+.skill-level-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.level-number {
+  font-size: 10px;
+  color: var(--retro-text);
+}
+
+.level-icon {
+  font-size: 24px;
+}
+
+.level-title {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: var(--retro-text);
+  text-shadow: 2px 2px 0 var(--retro-text-shadow);
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.skill-badge {
+  background-color: var(--retro-bg);
+  border: 3px solid var(--retro-text);
+  padding: 8px 12px;
+  font-size: 8px;
+  color: var(--retro-text);
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+.skill-badge:hover {
+  background-color: var(--retro-primary);
+  transform: scale(1.05);
+}
+
+.cert-badge {
+  background-color: var(--retro-accent);
+  color: var(--retro-text-shadow);
+}
+
+.achievement {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 3px dashed var(--retro-border);
+}
+
+.achievement-text {
+  font-size: 8px;
+  color: var(--retro-accent);
+}
+
+/* Stats Section */
+.stats-section {
+  padding: 80px 0;
+  background-color: var(--retro-dark);
+}
+
+.game-stats-board {
+  background-color: var(--retro-bg);
+  border: 8px solid var(--retro-border);
+  padding: 50px;
+  box-shadow: 
+    inset 0 0 0 4px var(--retro-dark),
+    8px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.stat-title {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: var(--retro-accent);
+  text-shadow: 3px 3px 0 var(--retro-text-shadow);
+}
+
+.stat-card-large {
+  background-color: var(--retro-dark);
+  border: 6px solid var(--retro-primary);
+  padding: 30px;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+  height: 100%;
+}
+
+.stat-description {
+  margin-bottom: 20px;
+  line-height: 2;
+}
+
+.hobbies-retro {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 4px dashed var(--retro-border);
+}
+
+.hobby-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hobby-pill {
+  background-color: var(--retro-bg);
+  border: 4px solid var(--retro-success);
+  padding: 10px 15px;
+  font-size: 8px;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+.hobby-pill:hover {
+  background-color: var(--retro-success);
+  color: var(--retro-text-shadow);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Stat Cards */
+.stat-card {
+  background-color: var(--retro-dark);
+  border: 4px solid;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.stat-hp {
+  border-color: var(--retro-primary);
+}
+
+.stat-mp {
+  border-color: var(--retro-secondary);
+}
+
+.stat-exp {
+  border-color: var(--retro-accent);
+}
+
+.stat-level {
+  border-color: var(--retro-success);
+}
+
+.stat-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.stat-bar {
+  background-color: var(--retro-bg);
+  border: 3px solid var(--retro-text);
+  height: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--retro-success) 0px,
+    var(--retro-success) 4px,
+    var(--retro-accent) 4px,
+    var(--retro-accent) 8px
+  );
+  animation: progress-fill 2s ease-out;
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0;
+  }
+}
+
+.stat-label {
+  font-size: 8px;
+  text-align: center;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 80px 0;
+  background-color: var(--retro-bg);
+}
+
+.contact-game-over {
+  background-color: var(--retro-dark);
+  border: 8px solid var(--retro-accent);
+  padding: 60px 40px;
+  box-shadow: 
+    inset 0 0 0 4px var(--retro-bg),
+    8px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item-retro {
+  background-color: var(--retro-bg);
+  border: 4px solid var(--retro-border);
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.1s;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.contact-item-retro:hover {
+  border-color: var(--retro-primary);
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.5);
+}
+
+.contact-icon {
+  font-size: 32px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.contact-details {
+  flex: 1;
+}
+
+.contact-label {
+  color: var(--retro-secondary);
+  margin-bottom: 5px;
+  display: block;
+}
+
+.contact-value {
+  color: var(--retro-text);
+}
+
+.contact-link {
+  text-decoration: none;
+  transition: all 0.1s;
+}
+
+.contact-link:hover {
+  color: var(--retro-accent);
+}
+
+/* Footer */
+.footer-retro {
+  background-color: var(--retro-dark);
+  padding: 40px 0;
+  text-align: center;
+  border-top: 8px solid var(--retro-primary);
+}
+
+.footer-text {
+  margin: 10px 0;
+  color: var(--retro-text);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .retro-title {
+    font-size: 18px;
+  }
+
+  .game-screen {
+    padding: 30px 20px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .retro-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .retro-title {
+    font-size: 14px;
+  }
+
+  .game-screen {
+    padding: 20px 15px;
+    border: 4px solid var(--retro-border);
+  }
+
+  .game-stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .pixel-character-container {
+    margin-top: 30px;
+    max-width: 300px;
+  }
+
+  .retro-section-title {
+    font-size: 14px;
+  }
+
+  .game-stats-board {
+    padding: 30px 20px;
+  }
+
+  .contact-item-retro {
+    flex-direction: column;
+    text-align: center;
+  }
+}
