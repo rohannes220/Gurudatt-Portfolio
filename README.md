@@ -206,6 +206,12 @@ The site is fully responsive! On mobile:
 ### Video Demonstration
 🎥 **Demo Video:** https://www.youtube.com/watch?v=OlJ59Zcp4Eg
 
+### 📄 Design Document
+📝 **System Design Doc:** https://docs.google.com/document/d/1yIYrPoG60Gs_qaOVuKpqK5hLa5aNsprjxBwjucuLAzg/edit?usp=sharing
+
+### 📄 Presentation
+📝 **presentation slides:** https://docs.google.com/presentation/d/1GBWIB53HyAVBFhn8MicYMIJ6wvVpcOWtUcOLIxQOCVU/edit?usp=sharing
+
 *2-minute narrated walkthrough showcasing:*
 - Homepage and interactive skill game
 - Projects/quests page
