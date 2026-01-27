@@ -204,7 +204,7 @@ The site is fully responsive! On mobile:
 📂 **GitHub Repository:** https://github.com/Gurudatt007/Gurudatt-Portfolio.git
 
 ### Video Demonstration
-🎥 **Demo Video:** https://www.youtube.com/watch?v=qZn2yXIb-FI
+🎥 **Demo Video:** https://www.youtube.com/watch?v=OlJ59Zcp4Eg
 
 *2-minute narrated walkthrough showcasing:*
 - Homepage and interactive skill game

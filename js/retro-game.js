@@ -338,13 +338,11 @@ export class SkillGame {
   }
 
   drawScore() {
-    // Draw score in top-left corner
     this.ctx.fillStyle = '#ffffff';
     this.ctx.font = 'bold 14px "Press Start 2P"';
     this.ctx.textAlign = 'left';
     this.ctx.fillText(`SCORE: ${this.score}`, 20, 30);
 
-    // Draw skill count
     const collected = this.skills.filter((s) => !s.collected).length;
     this.ctx.fillText(`SKILLS: ${16 - collected}/16`, 20, 60);
   }
